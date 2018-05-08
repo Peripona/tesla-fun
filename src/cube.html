@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Simple Js Game</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="cube.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Raleway');
+	</style>
+</head>
+<body class="game-bg">
+	<div id="game">
+
+        <div id="launchPad">
+            <input type="radio" checked id="radio-front" name="select-face"/>
+            <input type="radio" id="radio-left" name="select-face"/>
+            <input type="radio" id="radio-right" name="select-face"/>
+            <input type="radio" id="radio-top" name="select-face"/>
+            <input type="radio" id="radio-bottom" name="select-face"/>
+            <input type="radio" id="radio-back" name="select-face"/>
+
+            <div class="separator"></div>
+
+            <div class="space3d">
+                <div class="_3dbox">
+                    <div class="_3dface _3dface--front"></div>
+                    <div class="_3dface _3dface--top"></div>
+                    <div class="_3dface _3dface--bottom"></div>
+                    <div class="_3dface _3dface--left"></div>
+                    <div class="_3dface _3dface--right"></div>
+                    <div class="_3dface _3dface--back"></div>
+                </div>
+            </div>
+
+        </div>
+	</div>
+</body>
+</html>

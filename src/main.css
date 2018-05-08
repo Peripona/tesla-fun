@@ -1,0 +1,129 @@
+
+html, body {
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --main-bg-color: lightgreen;
+    --rocket-height: 120px;
+    --rocket-width: 280px;
+}
+
+#game {
+    text-align: center;
+}
+#game > h1 {
+    margin: 1px auto;
+}
+.game-bg {
+	background: var(--main-bg-color);
+}
+
+#rocket {
+    width: var(--rocket-width);
+    height: var(--rocket-height);
+    border: 2px solid red;
+    border-radius: 0 150px 150px 0;
+    border-left: 0;
+    margin: 65px auto;
+    box-shadow: inset -40px 0 22px -2px #9c9c4c, -40px 0 22px -2px lightcoral;
+    transform: rotate(270deg);
+    position: absolute;
+    top: calc(100% - var(--rocket-width) - 200px);
+    left: calc(50% - 150px);
+    animation-name: fly;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: 0.7s;
+    text-align: center;
+    color: #9E9E9E;
+    z-index: 2;
+    background: floralwhite;
+}
+
+@keyframes fly {
+	from {top: calc(100% - var(--rocket-width) - 200px);}
+	to {top: 50px}
+}
+
+#hellipad {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(100% - 180px);
+}
+
+/* 3D Cube */
+.space3d {
+    perspective: 1000px;
+    width: 250px;
+    height: 100px;
+    text-align: center;
+    display: inline-block;
+}
+
+._3dbox {
+    display: inline-block;
+    transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(15deg);
+}
+
+._3dface {
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid #888;
+    background: #FFF;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+    color: #333;
+    /*line-height: 120px;*/
+    opacity: 0.8;
+}
+
+._3dface--front {
+    width: 250px;
+    height: 100px;
+    transform: translate3d(0, 0, 125px);
+}
+
+._3dface--top {
+    width: 250px;
+    height: 250px;
+    transform: rotateX(90deg) translate3d(0, 0, 125px);
+}
+
+._3dface--bottom {
+    width: 120px;
+    height: 120px;
+    transform: rotateX(-90deg) translate3d(0, 0, 60px);
+}
+
+._3dface--left {
+    width: 250px;
+    height: 100px;
+    left: 50%;
+    margin-left: -125px;
+    transform: rotateY(-90deg) translate3d(0, 0, 125px);
+}
+
+._3dface--right {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    margin-left: -60px;
+    transform: rotateY(90deg) translate3d(0, 0, 60px);
+}
+
+._3dface--back {
+    width: 120px;
+    height: 120px;
+    transform: rotateY(180deg) translate3d(0, 0, 60px);
+}
